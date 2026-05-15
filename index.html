@@ -1,162 +1,226 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ahmed's Birthday</title>
     <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- ===== صفحة الترحيب (تظهر 3 ثواني) ===== -->
     <div id="splash" class="splash-screen">
-        <div class="splash-content">
-            <div class="decorative-line"><span>A SPECIAL DAY</span></div>
-            <h1 class="splash-title">Today is<br><span class="medo-name">Ahmed's</span><br>Birthday</h1>
-            <p class="splash-subtitle">✨ Let the celebration begin</p>
-            <button class="btn-start" id="btnStart">ابدأ الكويز ←</button>
-        </div>
-        <div class="floating-flowers">
-            <div class="flower f1"></div>
-            <div class="flower f2">🌷</div>
-            <div class="flower f3">🌸</div>
-            <div class="flower f4"></div>
-            <div class="flower f5"></div>
-        </div>
+      <div class="splash-content">
+        <div class="decorative-line"><span>A SPECIAL DAY</span></div>
+        <h1 class="splash-title">
+          Today is<br /><span class="medo-name">Ahmed's</span><br />Birthday
+        </h1>
+        <p class="splash-subtitle">✨ Let the celebration begin</p>
+        <button class="btn-start" id="btnStart">ابدأ الكويز ←</button>
+      </div>
+      <div class="floating-flowers">
+        <div class="flower f1"></div>
+        <div class="flower f2">🌷</div>
+        <div class="flower f3">🌸</div>
+        <div class="flower f4"></div>
+        <div class="flower f5"></div>
+      </div>
     </div>
 
     <!-- ===== صفحة الكويز (مخفية في البداية) ===== -->
     <div id="quizPage" class="quiz-page hidden">
-        <div class="quiz-header">
-            <h2>!Quick Quiz for Ahmed</h2>
-            <p>جاوب صح عشان تعرف تعدي</p>
-        </div>
-        <div class="quiz-container" id="quizContainer"></div>
-        <button class="btn-submit" id="btnSubmit">تأكيد الإجابات</button>
-        <div class="quiz-progress"><span id="questionCount"></span></div>
+      <div class="quiz-header">
+        <h2>!Quick Quiz for Ahmed</h2>
+        <p>جاوب صح عشان تعرف تعدي</p>
+      </div>
+      <div class="quiz-container" id="quizContainer"></div>
+      <button class="btn-submit" id="btnSubmit">تأكيد الإجابات</button>
+      <div class="quiz-progress"><span id="questionCount"></span></div>
     </div>
 
     <!-- ===== صفحة الاحتفال ===== -->
     <section id="celebrateSection" class="celebrate-section hidden">
-        <div class="confetti-bg" id="confettiBg"></div>
-        <div class="celebrate-content">
-            <div class="celebrate-emoji">🎉</div>
-            <p class="celebrate-subtitle">A CELEBRATION</p>
-            <h1 class="celebrate-title">Let's Celebrate<br><span class="medo-celebrate">Ahmed!</span> </h1>
-            <button class="btn-celebrate" id="btnCelebrate">CELEBRATE 🎊</button>
-        </div>
+      <div class="confetti-bg" id="confettiBg"></div>
+      <div class="celebrate-content">
+        <div class="celebrate-emoji">🎉</div>
+        <p class="celebrate-subtitle">A CELEBRATION</p>
+        <h1 class="celebrate-title">
+          Let's Celebrate<br /><span class="medo-celebrate">Ahmed!</span>
+        </h1>
+        <button class="btn-celebrate" id="btnCelebrate">CELEBRATE 🎊</button>
+      </div>
     </section>
 
     <!-- ===== صفحة الذكريات ===== -->
     <section id="memoriesSection" class="memories-section hidden">
-        <div class="memories-header">
-            <p class="memories-subtitle">MEMORIES</p>
-            <h2 class="memories-title">Our Beautiful Moments</h2>
+      <div class="memories-header">
+        <p class="memories-subtitle">MEMORIES</p>
+        <h2 class="memories-title">Our Beautiful Moments</h2>
+      </div>
+      <div class="photos-grid" id="photosGrid">
+        <div class="photo-card">
+          <img src="1.jpeg" alt="Memory 1" />
+          <p class="photo-date">30/12/2025</p>
         </div>
-        <div class="photos-grid" id="photosGrid">
-            <div class="photo-card"><img src="photo/1.jpeg" alt="Memory 1"><p class="photo-date">30/12/2025</p></div>
-            <div class="photo-card"><img src="photo/3.jpeg" alt="Memory 2"><p class="photo-date">30/12/2025</p></div>
-            <div class="photo-card"><img src="photo/2.jpeg" alt="Memory 3"><p class="photo-date">14/1/2026</p></div>
-            <div class="photo-card"><img src="photo/4.jpeg" alt="Memory 4"><p class="photo-date">3/4/2021</p></div>
-            <div class="photo-card"><img src="photo/5.jpeg" alt="Memory 5"><p class="photo-date">3/10/2021</p></div>
-            <div class="photo-card"><img src="photo/6.jpeg" alt="Memory 6"><p class="photo-date">30/10/2016</p></div>
-            <div class="photo-card"><img src="photo/7.jpeg" alt="Memory 7"><p class="photo-date">13/1/2026</p></div>
-            <div class="photo-card"><img src="photo/8.jpeg" alt="Memory 8"><p class="photo-date">29/9/2024</p></div>
-            <div class="photo-card"><img src="photo/9.jpeg" alt="Memory 9"><p class="photo-date">14/2/2025</p></div>
+        <div class="photo-card">
+          <img src="3.jpeg" alt="Memory 2" />
+          <p class="photo-date">30/12/2025</p>
         </div>
+        <div class="photo-card">
+          <img src="2.jpeg" alt="Memory 3" />
+          <p class="photo-date">14/1/2026</p>
+        </div>
+        <div class="photo-card">
+          <img src="4.jpeg" alt="Memory 4" />
+          <p class="photo-date">3/4/2021</p>
+        </div>
+        <div class="photo-card">
+          <img src="5.jpeg" alt="Memory 5" />
+          <p class="photo-date">3/10/2021</p>
+        </div>
+        <div class="photo-card">
+          <img src="6.jpeg" alt="Memory 6" />
+          <p class="photo-date">30/10/2016</p>
+        </div>
+        <div class="photo-card">
+          <img src="7.jpeg" alt="Memory 7" />
+          <p class="photo-date">13/1/2026</p>
+        </div>
+        <div class="photo-card">
+          <img src="8.jpeg" alt="Memory 8" />
+          <p class="photo-date">29/9/2024</p>
+        </div>
+        <div class="photo-card">
+          <img src="9.jpeg" alt="Memory 9" />
+          <p class="photo-date">14/2/2025</p>
+        </div>
+      </div>
     </section>
 
     <!-- ===== صفحة الرسالة ===== -->
     <section id="letterSection" class="letter-section hidden">
-        <div class="letter-container">
-            <div class="letter-header">
-                <p class="letter-subtitle">من القلب</p>
-                <h2 class="letter-title">احمد حبيبي</h2>
-                <div class="letter-line"></div>
-            </div>
-            <div class="letter-content-arabic">
-                <p>كل سنه وانت طيب ي حبيبي ي جوزى وكل حاجة ليا كل سنه وانت غيرت حياتي واديتها معني جديد وحسيت بميت حاجة جديدة وجميله وانت ف حياتي السنادى مختلفه لأننا خلاص متجوزين مش زى كل سنه بقولك أن شااء الله السنه الجايه اكون مراتك خلاص بقيت مراتك ي حبيبي بحبك من كل قلبي واتمني من كل قلبي انك تبقي سعيد ومبسوط ومرتاح بحبك اوى ♥️</p>
-            </div>
-            <div class="letter-line"></div>
-            <div class="letter-content-english">
-                <p>I really can't explain how much you mean to me. With you, everything feels softer, safer, and happier. Your care, your words, and even the smallest details you do always make my heart feel full.</p>
-                <br>
-                <p>I hope we always stay this close, sharing our days, our little moments, and building beautiful memories together. And no matter what happens, I just want you to know that you'll always have a very special place in my heart ❤️</p>
-            </div>
-            <div class="letter-signature">
-                <p class="signature-heart">❤️ Your girl</p>
-                <p class="signature-name">نورة</p>
-            </div>
-            
-            <!-- زر مشاهدة الفيديو -->
-            <div class="video-btn-wrapper">
-                <button class="btn-watch-video" id="btnWatchVideo">
-                    <span class="play-icon">▶</span>
-                    🎬 Watch This Video
-                </button>
-                <p class="video-hint">اضغطي هنا عشان تشوفي مفاجأة خاصة 💕</p>
-            </div>
+      <div class="letter-container">
+        <div class="letter-header">
+          <p class="letter-subtitle">من القلب</p>
+          <h2 class="letter-title">احمد حبيبي</h2>
+          <div class="letter-line"></div>
         </div>
+        <div class="letter-content-arabic">
+          <p>
+            كل سنه وانت طيب ي حبيبي ي جوزى وكل حاجة ليا كل سنه وانت غيرت حياتي
+            واديتها معني جديد وحسيت بميت حاجة جديدة وجميله وانت ف حياتي السنادى
+            مختلفه لأننا خلاص متجوزين مش زى كل سنه بقولك أن شااء الله السنه
+            الجايه اكون مراتك خلاص بقيت مراتك ي حبيبي بحبك من كل قلبي واتمني من
+            كل قلبي انك تبقي سعيد ومبسوط ومرتاح بحبك اوى ♥️
+          </p>
+        </div>
+        <div class="letter-line"></div>
+        <div class="letter-content-english">
+          <p>
+            I really can't explain how much you mean to me. With you, everything
+            feels softer, safer, and happier. Your care, your words, and even
+            the smallest details you do always make my heart feel full.
+          </p>
+          <br />
+          <p>
+            I hope we always stay this close, sharing our days, our little
+            moments, and building beautiful memories together. And no matter
+            what happens, I just want you to know that you'll always have a very
+            special place in my heart ❤️
+          </p>
+        </div>
+        <div class="letter-signature">
+          <p class="signature-heart">❤️ Your girl</p>
+          <p class="signature-name">نورة</p>
+        </div>
+
+        <!-- زر مشاهدة الفيديو -->
+        <div class="video-btn-wrapper">
+          <button class="btn-watch-video" id="btnWatchVideo">
+            <span class="play-icon">▶</span>
+            🎬 Watch This Video
+          </button>
+          <p class="video-hint">اضغطي هنا عشان تشوفي مفاجأة خاصة 💕</p>
+        </div>
+      </div>
     </section>
 
     <!-- ===== صفحة الفيديو ===== -->
     <section id="videoSection" class="video-section hidden">
-        <div class="video-header">
-            <p class="video-subtitle">A SPECIAL MESSAGE</p>
-            <h2 class="video-title">🎬 Just For You, Ahmed</h2>
+      <div class="video-header">
+        <p class="video-subtitle">A SPECIAL MESSAGE</p>
+        <h2 class="video-title">🎬 Just For You, Ahmed</h2>
+      </div>
+
+      <div class="video-wrapper">
+        <div class="video-container">
+          <!-- استبدل YOUR_VIDEO_ID برقم الفيديو الخاص بك -->
+          <iframe
+            id="videoFrame"
+            src="55.mp4"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+            "
+            allowfullscreen
+          ></iframe>
         </div>
-        
-        <div class="video-wrapper">
-            <div class="video-container">
-                <!-- استبدل YOUR_VIDEO_ID برقم الفيديو الخاص بك -->
-                <iframe id="videoFrame" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="video-glow"></div>
-        </div>
-        
-        <!-- أزرار التحكم في الفيديو -->
-        <div class="video-controls">
-            <button class="video-ctrl-btn" id="btnPlayPause" title="تشغيل/إيقاف">
-                <span class="ctrl-icon">
-                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                </span>
-                <span class="video-ctrl-label">تشغيل</span>
-            </button>
-            
-            <button class="video-ctrl-btn" id="btnZoomIn" title="تكبير">
-                <span class="ctrl-icon">
-                    <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-                </span>
-                <span class="video-ctrl-label">تكبير</span>
-            </button>
-            
-            <button class="video-ctrl-btn" id="btnZoomOut" title="تصغير">
-                <span class="ctrl-icon">
-                    <svg viewBox="0 0 24 24"><path d="M19 13H5v-2h14v2z"/></svg>
-                </span>
-                <span class="video-ctrl-label">تصغير</span>
-            </button>
-            
-            <button class="video-ctrl-btn" id="btnFullscreen" title="ملء الشاشة">
-                <span class="ctrl-icon">
-                    <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
-                </span>
-                <span class="video-ctrl-label">ملء الشاشة</span>
-            </button>
-        </div>
-        
-        <p class="video-note">💌 From Noura with all my love</p>
+        <div class="video-glow"></div>
+      </div>
+
+      <!-- أزرار التحكم في الفيديو -->
+      <div class="video-controls">
+        <button class="video-ctrl-btn" id="btnPlayPause" title="تشغيل/إيقاف">
+          <span class="ctrl-icon">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+          </span>
+          <span class="video-ctrl-label">تشغيل</span>
+        </button>
+
+        <button class="video-ctrl-btn" id="btnZoomIn" title="تكبير">
+          <span class="ctrl-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+            </svg>
+          </span>
+          <span class="video-ctrl-label">تكبير</span>
+        </button>
+
+        <button class="video-ctrl-btn" id="btnZoomOut" title="تصغير">
+          <span class="ctrl-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 13H5v-2h14v2z" /></svg>
+          </span>
+          <span class="video-ctrl-label">تصغير</span>
+        </button>
+
+        <button class="video-ctrl-btn" id="btnFullscreen" title="ملء الشاشة">
+          <span class="ctrl-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"
+              />
+            </svg>
+          </span>
+          <span class="video-ctrl-label">ملء الشاشة</span>
+        </button>
+      </div>
+
+      <p class="video-note">💌 From Noura with all my love</p>
     </section>
 
     <!-- ===== مودال الخطأ ===== -->
     <div id="errorModal" class="modal-overlay hidden">
-        <div class="modal-content error-modal">
-            <div class="modal-emoji">😡</div>
-            <h3 class="modal-title">طب مفيش عيد ميلاد 🎂</h3>
-            <button class="btn-retry" id="btnRetry">حاول تاني</button>
-        </div>
+      <div class="modal-content error-modal">
+        <div class="modal-emoji">😡</div>
+        <h3 class="modal-title">طب مفيش عيد ميلاد 🎂</h3>
+        <button class="btn-retry" id="btnRetry">حاول تاني</button>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
