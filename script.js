@@ -58,6 +58,16 @@ const errorModal = document.getElementById('errorModal');
 const btnRetry = document.getElementById('btnRetry');
 const questionCountEl = document.getElementById('questionCount');
 
+// متغيرات التحكم في الفيديو
+const btnPlayPause = document.getElementById('btnPlayPause');
+const btnZoomIn = document.getElementById('btnZoomIn');
+const btnZoomOut = document.getElementById('btnZoomOut');
+const btnFullscreen = document.getElementById('btnFullscreen');
+const videoWrapper = document.querySelector('.video-wrapper');
+
+let currentZoom = 1;
+let isPlaying = false;
+
 let userAnswers = {};
 let currentWrongQuestion = null;
 
@@ -172,4 +182,61 @@ function createConfetti() {
         if (Math.random() > 0.5) piece.style.borderRadius = '50%';
         container.appendChild(piece);
     }
+}
+
+// ===== التحكم في الفيديو =====
+
+// زر تشغيل/إيقاف
+if (btnPlayPause) {
+    btnPlayPause.addEventListener('click', () => {
+        const iframe = document.getElementById('videoFrame');
+        if (isPlaying) {
+            // إيقاف: إضافة pause للـ iframe
+            iframe.src = iframe.src;
+            isPlaying = false;
+            btnPlayPause.querySelector('.ctrl-icon svg').innerHTML = '<path d="M8 5v14l11-7z"/>';
+            btnPlayPause.querySelector('.video-ctrl-label').textContent = 'تشغيل';
+        } else {
+            // تشغيل
+            isPlaying = true;
+            btnPlayPause.querySelector('.ctrl-icon svg').innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+            btnPlayPause.querySelector('.video-ctrl-label').textContent = 'إيقاف';
+        }
+    });
+}
+
+// زر تكبير
+if (btnZoomIn) {
+    btnZoomIn.addEventListener('click', () => {
+        if (currentZoom < 2) {
+            currentZoom += 0.2;
+            videoWrapper.style.transform = `scale(${currentZoom})`;
+            videoWrapper.style.transition = 'transform 0.3s ease';
+        }
+    });
+}
+
+// زر تصغير
+if (btnZoomOut) {
+    btnZoomOut.addEventListener('click', () => {
+        if (currentZoom > 0.6) {
+            currentZoom -= 0.2;
+            videoWrapper.style.transform = `scale(${currentZoom})`;
+            videoWrapper.style.transition = 'transform 0.3s ease';
+        }
+    });
+}
+
+// زر ملء الشاشة
+if (btnFullscreen) {
+    btnFullscreen.addEventListener('click', () => {
+        const iframe = document.getElementById('videoFrame');
+        if (iframe.requestFullscreen) {
+            iframe.requestFullscreen();
+        } else if (iframe.webkitRequestFullscreen) {
+            iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) {
+            iframe.msRequestFullscreen();
+        }
+    });
 }
